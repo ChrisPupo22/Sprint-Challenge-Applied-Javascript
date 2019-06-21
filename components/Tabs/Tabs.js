@@ -11,7 +11,7 @@ class TabLink {
     // Check to see if this.tabData is equal to 'all'
     if(this.tabData === 'all'){
       // If `all` is true, select all cards regardless of their data attribute values
-       this.cards === document.querySelectorAll('.card');
+       this.cards = document.querySelectorAll('.card');
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
        this.cards = document.querySelectorAll(`.card[data-tab='${this.tabData}']`);
@@ -32,7 +32,7 @@ class TabLink {
      const tabs = document.querySelectorAll('.tab');
     
     // Iterate through the NodeList removing the .active-tab class from each element
-     Array.from(tabs).forEach(element => {element.classList.remove('active-tab')})
+     tabs.forEach(element => {element.classList.remove('active-tab')});
 
     // Select all of the elements with the .card class on them
      const cards = document.querySelectorAll('.card');
